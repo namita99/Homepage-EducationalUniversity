@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramrao Adik Institute of Technology | Blog</title>
+    <link rel="shortcut icon" type="images" href="images/logo.jpg">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header">
+
+        <a href="index.html" class="logo"> <i class="fas fa-user-graduate"></i> Ramrao Adik Institute of Technology </a>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about us.html">ABOUT</a>
+                <ul>
+                    <li ><a href='overview.html'><ok>OVERVIEW</ok></a></li>
+                    <li ><a href='message.html'><ok>PRINCIPAL'S MESSAGE</ok></a></li>
+                    <li ><a href='vision.html'><ok>VISION And MISSION</ok></a></li> 
+                    <li ><a href='goal.html'><ok>MANAGEMENT And GOAL</ok></a></li>
+                    <li ><a href='#'><ok>IMPORTANT FUNCTIONARIES</ok></a></li>
+                   <li ><a href='#'><ok>MANDATORY DISCLOSURES</ok></a></li> 
+                     </ul>
+                     </li>
+                <li><a href="gallery1.html">GALLERY</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="course.html">COURSE</a></li>
+                <li><a href="#">DEPARTMENT</a> <ul>
+                    <li ><a href='sci.html'><ok>SCIENCE</ok></a></li>
+                    <li ><a href='eng.html'><ok>ENGINEERING</ok></a></li>
+                    <li ><a href='#'><ok>LAW</ok></a></li> 
+                    
+                   <li ><a href='#'><ok>MEDICAL</ok></a></li> 
+                     </ul>
+                     </li>
+                
+                <li><a href="login.html">CONTACT</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <section class="heading">
+        <h3>Contact</h3>
+        <p> <a href="home.html">Contact>></a> Login </p>
+    </section>
+
+    <section class="contact">
+
+        <div class="icons-container">
+
+            <div class="icons">
+                <i class="fas fa-phone"></i>
+                <h3>our number</h3>
+                <p>021 2250888</p>
+            </div>
+
+            <div class="icons">
+                <i class="fas fa-envelope"></i>
+                <h3>our email</h3>
+                <p>dypatilcollege@gmail.com</p>
+                <p>dypatiluniversitycollegeinfo@gmail.com</p>
+            </div>
+
+            <div class="icons">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>our address</h3>
+                <p> DY Patil University Sector 7. Nerul, Navi Mumbai 400706</p>
+            </div>
+
+        </div>
+
+       
+
+    </section>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>JavaScript Form validation</title>
+    <link rel="stylesheet" href="/examples/css/form-style.css">
+    <script>
+    // Defining a function to display error message
+    function printError(elemId, hintMsg) {
+        document.getElementById(elemId).innerHTML = hintMsg;
+    }
+    function myFunction(){
+        parent.location="https://cdn.optinmonster.com/wp-content/uploads/2016/10/simple-thank-you.png"
+
+    }
+    // Defining a function to validate form 
+    function validateForm() {
+        // Retrieving the values of form elements 
+        var name = document.contactForm.name.value;
+        var email = document.contactForm.email.value;
+        var mobile = document.contactForm.mobile.value;
+        var country = document.contactForm.country.value;
+        var gender = document.contactForm.gender.value;
+        var hobbies = [];
+        var checkboxes = document.getElementsByName("hobbies[]");
+        for(var i=0; i < checkboxes.length; i++) {
+            if(checkboxes[i].checked) {
+                // Populate hobbies array with selected values
+                hobbies.push(checkboxes[i].value);
+            }
+        }
+        
+        // Defining error variables with a default value
+        var nameErr = emailErr = mobileErr = countryErr = genderErr = true;
+        
+        // Validate name
+        if(name == "" || name.length<6) {
+            printError("nameErr", "Please enter your name properly");
+        } else {
+            var regex = /^[a-zA-Z\s]+$/;                
+            if(regex.test(name) === false) {
+                printError("nameErr", "Please enter a valid name");
+            } else {
+                printError("nameErr", "");
+                nameErr = false;
+            }
+            
+        }
+        
+        // Validate email address
+        if(email == "") {
+            printError("emailErr", "Please enter your email address");
+        } else {
+            // Regular expression for basic email validation
+            var regex = /^\S+@\S+\.\S+$/;
+            if(regex.test(email) === false) {
+                printError("emailErr", "Please enter a valid email address");
+            } else{
+                printError("emailErr", "");
+                emailErr = false;
+            }
+        }
+        
+        // Validate mobile number
+        if(mobile == "") {
+            printError("mobileErr", "Please enter your mobile number");
+        } else {
+            var regex = /^[1-9]\d{9}$/;
+            if(regex.test(mobile) === false) {
+                printError("mobileErr", "Please enter a valid 10 digit mobile number");
+            } else{
+                printError("mobileErr", "");
+                mobileErr = false;
+            }
+        }
+        
+        // Validate country
+        if(country == "Select") {
+            printError("countryErr", "Please select your country");
+        } else {
+            printError("countryErr", "");
+            countryErr = false;
+        }
+        
+        // Validate gender
+        if(gender == "") {
+            printError("genderErr", "Please select your gender");
+        } else {
+            printError("genderErr", "");
+            genderErr = false;
+        }
+        
+        // Prevent the form from being submitted if there are any errors
+        if((nameErr || emailErr || mobileErr || countryErr || genderErr) == true) {
+           return false;
+        } else {
+            // Creating a string from input data for preview
+            var dataPreview = "You've entered the following details: \n" +
+                              "Full Name: " + name + "\n" +
+                              "Email Address: " + email + "\n" +
+                              "Mobile Number: " + mobile + "\n" +
+                              "Country: " + country + "\n" +
+                              "Gender: " + gender + "\n";
+            if(hobbies.length) {
+                dataPreview += "Hobbies: " + hobbies.join(", ");
+            }
+            // Display input data in a dialog box before submitting the form
+            alert(dataPreview);
+            parent.location="anotherpage.html"
+        }
+    };
+    </script>
+<style>
+body {
+    font-size: 16px;
+    background: #f9f9f9;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+form {
+    width: 300px;
+    background: #fff;
+    padding: 15px 40px 40px;
+    border: 1px solid #ccc;
+    margin: 50px auto 0;
+    border-radius: 5px;
+}
+label {
+    display: block;
+    margin-bottom: 5px
+}
+label i {
+    color: #999;
+    font-size: 80%;
+}
+input, select {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+.row {
+    padding-bottom: 10px;
+}
+.form-inline {
+    border: 1px solid #ccc;
+    padding: 8px 10px 4px;
+    border-radius: 2px;
+}
+.form-inline label, .form-inline input {
+    display: inline-block;
+    width: auto;
+    padding-right: 15px;
+}
+.error {
+    color: red;
+    font-size: 90%;
+}
+input[type="submit"] {
+    font-size: 110%;
+    font-weight: 100;
+    background: #006dcc;
+    border-color: #016BC1;
+    box-shadow: 0 3px 0 #0165b6;
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background: #0165b6;
+}
+</style>
+    </head>
+    <body>
+    <form name="contactForm" onsubmit="return validateForm()" action="anotherpage.html" method="post">
+        <h2>Login Form</h2>
+        <div class="row">
+            <label>Full Name</label>
+            <input type="text" name="name">
+            <div class="error" id="nameErr"></div>
+        </div>
+        <div class="row">
+            <label>Email Address</label>
+            <input type="text" name="email">
+            <div class="error" id="emailErr"></div>
+        </div>
+        <div class="row">
+            <label>Mobile Number</label>
+            <input type="text" name="mobile" maxlength="10">
+            <div class="error" id="mobileErr"></div>
+        </div>
+        <div class="row">
+            <label>Country</label>
+            <select name="country">
+                <option>Select</option>
+                <option>Australia</option>
+                <option>India</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+            </select>
+            <div class="error" id="countryErr"></div>
+        </div>
+        <div class="row">
+            <label>Gender</label>
+            <div class="form-inline">
+                <label><input type="radio" name="gender" value="male"> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+            </div>
+            <div class="error" id="genderErr"></div>
+        </div>
+        
+        <div class="row">
+            <input type="submit" value="Submit" >
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+
+     <!-- footer section starts  -->
+
+     <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>explore</h3>
+                <a href="index.html"> <i class="fas fa-arrow-right"></i> HOME </a>
+                <a href="about us.html"> <i class="fas fa-arrow-right"></i> ABOUT </a>
+                <a href="gallery1.html"> <i class="fas fa-arrow-right"></i> GALLERY </a>
+                <a href="blog.html"> <i class="fas fa-arrow-right"></i> BLOG </a>
+                <a href="login.html"> <i class="fas fa-arrow-right"></i> CONTACT US </a>
+            </div>
+            
+            <div class="box">
+                <h3>Follow US</h3>
+                <a href="https://www.facebook.com/DYPatilUniversityNaviMumbai"> <i class="fab fa-facebook-f"></i> facebook </a>
+                <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+                <a href="https://www.linkedin.com/company/d-y-patil-university-navi-mumbai/?originalSubdomain=in"> <i class="fab fa-linkedin"></i> linkedin </a>
+                <a href="https://www.instagram.com/dypatiluniversityadmissions/"> <i class="fab fa-instagram"></i> instagram </a>
+                <a href="https://www.youtube.com/c/DYPatilUniversityNaviMumbai/featured"> <i class="fab fa-youtube"></i> youtube </a>
+                <a href="#"> <i class="fab fa-github"></i> github </a>
+            </div>
+
+        </div>
+
+        <div class="credit"> created by <span>Ramrao Adik Institute of Technology</span> | all rights reserved! </div>
+
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+
+    </body>
+    </html>

@@ -1,0 +1,175 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramrao Adik Institute of Technology | Contact Us</title>
+    <link rel="shortcut icon" type="images" href="images/logo.jpg">
+    <link rel="stylesheet" href="style.css" />
+
+   
+   
+<script>
+      function myFunction() {
+  location.replace("https://cdn.optinmonster.com/wp-content/uploads/2016/10/simple-thank-you.png")
+}
+      
+function Registration() {
+                var name =
+                    document.forms.RegForm.Name.value;
+                var email =
+                    document.forms.RegForm.EMail.value;
+                var phone =
+                    document.forms.RegForm.Telephone.value;
+               var username =
+                       document.forms.RegForm.Username.value;
+                var address =
+                    document.forms.RegForm.Address.value;
+                var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;  //Javascript reGex for Email Validation.
+                var regPhone=/^\d{10}$/;                                        // Javascript reGex for Phone Number validation.
+                var regName = /\d+$/g;                                    // Javascript reGex for Name validation
+ 
+                if (name == "" || regName.test(name)) {
+                    window.alert("Please enter your name properly.");
+                    name.focus();
+                    return false;
+                }
+ 
+               else if (address == "") {
+                    window.alert("Please enter your address.");
+                    address.focus();
+                    return false;
+                }
+                 
+                else if (username == "" || regName.test(username)) {
+                    window.alert("Please enter your name properly.");
+                    name.focus();
+                    return false;
+                }
+                else if (email == "" || !regEmail.test(email)) {
+                    window.alert("Please enter a valid e-mail address.");
+                    email.focus();
+                    return false;
+                }
+                  
+            
+              else if (phone == "" || !regPhone.test(phone)) {
+                    alert("Please enter valid phone number.");
+                    phone.focus();
+                    return false;
+                }
+ 
+                else
+        {                                           
+               alert('Thank You for Registration & You are Redirecting to Website');
+               // Redirecting to other page or webste code. 
+               location.replace("https://cdn.optinmonster.com/wp-content/uploads/2016/10/simple-thank-you.png")
+        }
+ 
+                return true;
+            }
+        
+
+  </script> 
+  </head>
+  <body>
+    <div class="container">
+      <span class="big-circle"></span>
+      <img src="img/shape.png" class="square" alt="" />
+      <div class="form">
+        <div class="contact-info">
+          <h3 class="title">Let's get in touch</h3>
+          <p class="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+            dolorum adipisci recusandae praesentium dicta!
+          </p>
+
+          <div class="info">
+            <div class="information">
+              <img src="img/location.png" class="icon" alt="" />
+              <p>DY Patil University Sector 7. Nerul, Navi Mumbai 400706</p>
+            </div>
+            <div class="information">
+              <img src="img/email.png" class="icon" alt="" />
+              <p>dypatilcollege@gmail.com</p>
+            </div>
+            <div class="information">
+              <img src="img/phone.png" class="icon" alt="" />
+              <p>021 2250888</p>
+            </div>
+          </div>
+
+          <div class="social-media">
+            <p>Connect with us :</p>
+            
+            <div class="social-icons">
+              <a href="https://www.facebook.com/DYPatilUniversityNaviMumbai">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.instagram.com/dypatiluniversityadmissions/">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/d-y-patil-university-navi-mumbai/?originalSubdomain=in">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          
+
+         <form action="" method="post" autocomplete="off">
+          
+            <h3 class="title">Contact us</h3>
+            <p>Name: <input type="text"
+                            size="65" name="Name"  placeholder="Enter Your Name" required></p>
+ 
+            <br />
+             
+<p>Address: <input type="text"
+                            size="65" name="Address"  placeholder="Enter Your Address" required>
+        </p>
+ 
+            <br />
+<p>Username: <input type="text"
+                            size="65" name="username"  placeholder="Enter Your Username" required></p>
+ 
+            <br />
+             
+<p>E-mail ID: <input type="text"
+                            size="65" name="email"  placeholder="Enter Your Email ID" required></p>
+ 
+            <br />
+
+             
+<p>Phone No: <input type="text"
+                        size="65" name="Telephone"  placeholder="Enter Your Phone No" required></p>
+ 
+            <br />
+ 
+             
+<p>
+ <!--<input type="button" value="Submit" class = Submit onclick="myFunction()" /> -->
+<button type="submit" class="hero-btn red-btn" onclick="Registration()" windows.location="https://cdn.optinmonster.com/wp-content/uploads/2016/10/simple-thank-you.png">Submit</button> </p>
+ 
+</form>
+
+                  
+            
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+ 
+    
+    </script>
+  </body>
+</html>
